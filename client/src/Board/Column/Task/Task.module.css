@@ -1,4 +1,62 @@
 .wrapper {
-    border: 1px solid red;
-    width: 300px;
+    background: #ffffff;
+    width: 100%;
+    margin: 3px 0;
+    border-radius: 3px;
+    padding: 3%;
+}
+.title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.infoConteiner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.buttonsConteiner {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.edit,
+.del,
+.done {
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.edit:hover,
+.del:hover,
+.done:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s;
+}
+.edit:active,
+.del:active,
+.done:active {
+    transform: scale(0.8);
+    transition: transform 0.2s;
+}
+.edit {
+    color: #169ec0;
+}
+.del {
+    margin-left: 25px;
+    color: #bf1717;
+}
+.done {
+    color: #34a33d;
+}
+.taskInput {
+    display: block;
+    background: red;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 1%;
 }

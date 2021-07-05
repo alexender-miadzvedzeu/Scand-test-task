@@ -23,3 +23,4 @@ app.listen(PORT, (req, res) => {
 })
 
 require('./modules/tasks.js')(app);
+require('./modules/fields.js')(app);

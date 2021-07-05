@@ -1,4 +1,33 @@
 .wrapper {
-    border: 1px solid red;
-    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* background: white; */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    position: relative;
+    transition: all 0.2s;
+}
+.button {
+    position: absolute;
+    top: -30px;
+    width: 50px;
+    height: 25px;
+    background: #3981ce;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.2s;
+}
+.fieldName {
+    margin-bottom: 3%;
+}
+
+.del {
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: red;
+    transition: transform 0.2s;
 }

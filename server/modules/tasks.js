@@ -45,13 +45,14 @@ module.exports = app => {
                 }
 
                 //make newTask obj
+                const id = create_ID()
                 const newTask = {
-                    "id": create_ID(),
+                    "id": id,
                     "title": req.body.title,
                     "description": req.body.description,
                     "publishDate": publishDate(),
                     "assignee": req.body.assignee,
-                    "currentField": "open"
+                    "currentField": req.body.currentField
                 }
 
                 //update dataFromDB obj
@@ -60,7 +61,7 @@ module.exports = app => {
                 //rewrite DB.json
                 fs.writeFile('DB.json', JSON.stringify(dataFromDB), 'utf8', err => {
                     if (err) throw err;
-                    res.sendStatus(200);
+                    res.status(200).send(({id}));
                 })
             });
         } catch (error) {
@@ -81,7 +82,10 @@ module.exports = app => {
                 let updatedData = {...dataFromDB};
                 updatedData.tasks = dataFromDB.tasks.map(task => {
                     if (task.id === updatedTask.id) {
-                        return task = updatedTask;
+                        return {
+                            ...task,
+                            ...updatedTask
+                        };
                     } else {
                         return task;
                     }
